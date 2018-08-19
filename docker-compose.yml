@@ -1,0 +1,26 @@
+version: '3'
+services:
+  presto:
+    build:
+      context: presto
+    ports:
+      - "8080:8080" # dashboard presto
+    environment: []
+    volumes: []
+  postgresql:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=1234
+  pgadmin:
+    image: thajeztah/pgadmin4
+    ports:
+      - "5050:5050"
+    volumes:
+      - /pgadmin
+  spark:
+    build:
+      context: spark
+    ports:
+      - "8998:8998"

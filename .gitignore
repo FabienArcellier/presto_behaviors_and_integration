@@ -1,0 +1,4 @@
+/presto/archives/*
+/spark/archives/*
+/presto-cli
+!.gitkeep
